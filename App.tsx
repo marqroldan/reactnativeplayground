@@ -25,6 +25,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 
 ///Screens
 import Screen__Reanimated2 from './src/screens/Reanimated2';
+import Screen__EventsCalendar from './src/screens/EventsCalendar';
 
 const Drawer = createDrawerNavigator();
 
@@ -55,6 +56,10 @@ const App = () => {
           <Drawer.Screen
             name="Screen__Reanimated2"
             component={Screen__Reanimated2}
+          />
+          <Drawer.Screen
+            name="Screen__EventsCalendar"
+            component={Screen__EventsCalendar}
           />
         </Drawer.Navigator>
       </NavigationContainer>
