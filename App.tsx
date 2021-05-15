@@ -11,8 +11,6 @@
 import React from 'react';
 import {
   SafeAreaView,
-  ScrollView,
-  StatusBar,
   StyleSheet,
   Text,
   useColorScheme,
@@ -20,68 +18,15 @@ import {
   Button,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 
-const Section: React.FC<{
-  title: string;
-}> = ({children, title}) => {
-  const isDarkMode = useColorScheme() === 'dark';
-  return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
-    </View>
-  );
-};
-function HomeScreenStack({navigation}) {
-  return (
-    <View
-      style={{
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}>
-      <Text>Home Screen</Text>
-      <Button title="Open drawer" onPress={() => navigation.openDrawer()} />
-    </View>
-  );
-}
+///Screens
+import Screen__Reanimated2 from './src/screens/Reanimated2';
 
 const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
-
-const StackScreen = () => {
-  return (
-    <Stack.Navigator>
-      <Stack.Screen name="Home" component={HomeScreenStack} />
-    </Stack.Navigator>
-  );
-};
 
 function HomeScreen({navigation}) {
   return (
@@ -90,14 +35,6 @@ function HomeScreen({navigation}) {
         onPress={() => navigation.navigate('Notifications')}
         title="Go to notifications"
       />
-    </View>
-  );
-}
-
-function NotificationsScreen({navigation}) {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Button onPress={() => navigation.goBack()} title="Go back home" />
     </View>
   );
 }
@@ -115,8 +52,10 @@ const App = () => {
       <NavigationContainer>
         <Drawer.Navigator initialRouteName="Home">
           <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="StackScreen" component={StackScreen} />
-          <Drawer.Screen name="Notifications" component={NotificationsScreen} />
+          <Drawer.Screen
+            name="Screen__Reanimated2"
+            component={Screen__Reanimated2}
+          />
         </Drawer.Navigator>
       </NavigationContainer>
     </SafeAreaView>
