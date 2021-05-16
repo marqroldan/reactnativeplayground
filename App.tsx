@@ -27,6 +27,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import Screen__Reanimated2 from './src/screens/Reanimated2';
 import Screen__EventsCalendar from './src/screens/EventsCalendar';
 import Screen__AlphabetListPackage from './src/screens/AlphabetListPackage';
+import Screen__AlphabetListRN from './src/screens/RNSectionList';
 
 const Drawer = createDrawerNavigator();
 
@@ -52,7 +53,7 @@ const App = () => {
   return (
     <SafeAreaView style={backgroundStyle}>
       <NavigationContainer>
-        <Drawer.Navigator initialRouteName="Screen__AlphabetListPackage">
+        <Drawer.Navigator initialRouteName="Screen__AlphabetListRN">
           <Drawer.Screen name="Home" component={HomeScreen} />
           <Drawer.Screen
             name="Screen__Reanimated2"
@@ -65,6 +66,10 @@ const App = () => {
           <Drawer.Screen
             name="Screen__AlphabetListPackage"
             component={Screen__AlphabetListPackage}
+          />
+          <Drawer.Screen
+            name="Screen__AlphabetListRN"
+            component={Screen__AlphabetListRN}
           />
         </Drawer.Navigator>
       </NavigationContainer>

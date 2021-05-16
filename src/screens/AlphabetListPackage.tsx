@@ -427,6 +427,7 @@ export default class AlphabetListWithSearch extends React.Component {
         <Text>DataLength: {this.state.finalData.length}</Text>
         <AlphabetList
           data={this.state.finalData}
+          stickySectionHeadersEnabled={true}
           indexLetterStyle={styles.indexLetterStyle}
           renderCustomItem={this.renderCustomItem}
           renderCustomSectionHeader={this.renderCustomSectionHeader}
